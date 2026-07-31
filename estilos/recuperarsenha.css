@@ -1,0 +1,72 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    background-image: linear-gradient(45deg, #902ECA 10%, #53087e);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow:row nowrap;
+}
+
+main{
+    background-color: #ffffff1e;
+    color: white;
+    padding: 36px;
+    border: 1px solid #e5daf09f;
+    border-radius: 12px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 12px;
+}
+
+
+h1{
+    font-size: 1.3em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+input[type=email] {
+    background-color:#ffffff3f;
+    border: 1px solid #a9a9a9;
+    border-radius: 8px;
+    height: 36px;
+    padding: 0 8px;
+}
+
+input[type=email]::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#enviar{
+    background-color: #7e29af;
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid #a9a9a950;
+}
+
+#enviar:hover{
+    background-color: #53087e;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size:0.9em;
+    text-align: center;
+}
+
+p{
+    font-size:0.9em;
+}

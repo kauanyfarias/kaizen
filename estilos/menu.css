@@ -1,0 +1,107 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root{
+    /* BACKGROUND */
+    --darksidebar: #232323;
+    --darkmain: #1e1e1e;
+    --darkcard: #2c2c2c;
+
+    /* TEXTO */
+    --darktitle: #f1f1f1;
+    --darksubtitle: #888888;
+}
+
+
+nav{
+    background-color: var(--darksidebar);
+    height: 100vh;
+    display: grid;
+    position: fixed;
+}
+
+img{
+    margin-top: 30px;
+    width: 185px;
+}
+
+ul{
+    list-style-type: none;
+    text-align: left;   
+    padding: 0;
+}
+
+li{
+    color: #A9A9A9;
+    padding: 10px 10px;
+
+    display: flex;
+    align-items: center;
+}
+
+li:hover{
+    background-color: #2C2C2C;
+    border-radius: 12px;
+    color: white;
+}
+
+/* BOTÕES DE INTERATIVIDADE */
+div#botoes-interatividade{
+    display: flex;
+    justify-content: space-evenly;
+
+    color: #A9A9A9;
+}
+
+.fi-sr-exchange:hover, .fi-sr-brightness:hover{
+    color: white;
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+span{
+    padding-right: 15px;
+    font-size: 1.2em;
+}
+
+a{
+    color: #a9a9a9;
+    text-decoration: none;
+}
+
+/* SIDEBAR PARA PC */
+@media screen and (min-width:769px){
+    nav{
+        width: 200px;
+        padding: 0 15px;
+    }
+    
+}
+
+
+@media screen and (max-width:768px) {
+    nav{
+        width: 190px;
+        padding: 0 10px;
+        left: -210px;
+        transition: left 0.3s ease;
+        z-index: 100;
+        /* CONTINUAR */
+    }  
+
+    #barra-lateral.aberto{
+        left: 0;
+    }
+
+    #overlay.ativo{
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+    }
+
+    .fi-sr-exchange{
+        display: none;
+    }
+} 
+

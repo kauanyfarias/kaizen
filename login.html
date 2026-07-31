@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial,scale 1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="estilos/login.css">
+    </head>
+    <body>
+        <main>
+            <form autocomplete="on">
+                <h1>Acesse sua conta</h1>
+
+                <!-- EMAIL -->
+                <p><label for="iemail">E-mail:</label></p>
+                <input type="email" name="email" id="iemail" placeholder="seu_email@exemplo.com" required >
+
+                <!-- SENHA -->
+                <p><label for="isenha">Senha:</label></p>
+                <input type="password" name="senha" id="isenha" maxlength="12" minlength="5" placeholder="Digite sua senha" required>
+                <p id="recado"></p>
+
+                <!-- ENVIAR -->
+                <input type="submit" value="Entrar" onclick="logar(); return false">
+
+                <a href="./recuperarsenha.html">Esqueceu sua senha?</a>
+                <p>Não tem uma conta? <a href="./cadastro.html">Cadastre-se</a></p>
+            </form>
+        </main>
+        <script>
+            function logar(){
+                var email = document.getElementById('iemail').value
+                var senha = document.getElementById('isenha').value
+                var recado = document.getElementById('recado')
+
+                if (email == "admin@empresa.com" && senha == "1234"){
+                    location.href="home.html";
+                }else{
+                    recado.innerText = 'E-mail ou senha incorretos.'
+                }
+            }
+        </script>
+    </body>
+</html>

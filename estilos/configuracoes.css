@@ -1,0 +1,145 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root{
+    /* BACKGROUND */
+    --darksidebar: #232323;
+    --darkmain: #1e1e1e;
+    --darkcard: #2c2c2c;
+
+    /* TEXTO */
+    --darktitle: #f1f1f1;
+    --darksubtitle: #888888;
+}
+
+
+*{
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+
+    /* Direcionando o MAIN para ficar ao lado do sidebar */
+    display: grid;
+    grid-template-columns: 230px auto;
+}
+
+header{
+    display: none;
+}
+
+main{
+    background-color: var(--darkmain);
+    color: var(--darktitle);
+    padding: 36px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 40px; 
+}
+
+h1{
+    font-weight: 600;
+}
+
+#subtitulo{
+    color: var(--darksubtitle);
+    padding-left: 2px;
+}
+
+#informacoes{
+    background-color: #2c2c2c;
+    padding: 32px;
+    border-radius: 12px;
+
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#titulo-botao{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+input[type=button]{
+    cursor: pointer;
+    background-color: #902eca;
+    color: var(--darktitle);
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+input, textarea{
+    background-color: var(--darkmain);
+    border: 1px solid #a9a9a944;
+    border-radius: 8px;
+    padding: 8px 20px;
+    outline: none;
+    color: var(--darktitle);
+    font-size: 14px;
+}
+
+input:focus,  textarea:focus{
+    border: 1px solid #902eca;
+    box-shadow: 0 0 5px #902eca;
+}
+
+@media screen and (max-width:768px) {
+    body{
+        display: block;
+        /* POIS ESTÁ COM GRID NA VERSÃO DE PC */
+    }
+
+    header{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: end;
+        background-color: var(--darkmain);
+        color: var(--darktitle);
+        padding: 0px 20px;
+        height: 60px;
+    }
+
+    
+    header img{
+        width: 200px;
+    }
+
+    header img.inativo{
+        display: none;
+    }
+
+    #botao-menu{
+        background-color: var(--darkmain);
+        border: 2px solid var(--darkcard);
+        border-radius: 4px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    #botao-menu:hover{
+        transform: scale(0.9);
+    }
+    
+    header .fi-sr-menu-burger{
+        color: var(--darktitle);
+        font-size: 1.5em;
+    }
+
+    #botoes{
+        margin: auto;
+    }
+
+    main{
+        padding: 16px;
+    }
+}

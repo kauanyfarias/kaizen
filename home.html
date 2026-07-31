@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <style>
+        .drawer {
+        position: fixed;
+        top: 0;
+        left: -250px; /* começa escondida fora da tela */
+        width: 250px;
+        height: 100%;
+        background: #1a1a1a;
+        transition: left 0.3s ease; /* animação do arrasto */
+        }
+
+        .drawer.aberta {
+        left: 0; /* entra na tela */
+        }
+
+        .overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        }
+
+        .overlay.ativo {
+        display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topbar">
+        <button id="btnMenu">☰</button>
+        <img src="logo.svg" alt="Kaizen" />
+      </header>
+      
+      <nav class="drawer" id="drawer">
+        <a href="#">Início</a>
+        <a href="#">Calculadora</a>
+        <a href="#">Investimentos</a>
+      </nav>
+      
+      <!-- Fundo escurecido ao abrir -->
+      <div class="overlay" id="overlay"></div>
+    <script>
+        const btnMenu = document.getElementById('btnMenu')
+        const drawer = document.getElementById('drawer')
+        const overlay = document.getElementById('overlay')
+
+        // Abre ao clicar no botão
+        btnMenu.addEventListener('click', () => {
+          drawer.classList.toggle('aberta')
+          overlay.classList.toggle('ativo')
+        })
+
+        // Fecha ao clicar fora
+        overlay.addEventListener('click', () => {
+          drawer.classList.remove('aberta')
+          overlay.classList.remove('ativo')
+        })
+    </script>
+</body>
+
+</html>

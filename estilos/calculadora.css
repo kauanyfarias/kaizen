@@ -1,0 +1,286 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root{
+    /* BACKGROUND */
+    --darksidebar: #232323;
+    --darkmain: #1e1e1e;
+    --darkcard: #2c2c2c;
+
+    /* TEXTO */
+    --darktitle: #f1f1f1;
+    --darksubtitle: #888888;
+}
+
+
+*{
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+
+    /* Direcionando o MAIN para ficar ao lado do sidebar */
+    display: grid;
+    grid-template-columns: 230px auto;
+}
+
+header{
+    display: none;
+}
+
+main{
+    display: flex;
+    flex-flow: column wrap; /* Deixa os conteúdos embaixo do outro */
+    gap: 40px; /* Espaçamento entre elementos */
+    background-color: var(--darkmain);
+    color: var(--darktitle);
+    padding: 36px;
+}
+
+h1{
+    font-weight: 600;
+}
+
+#subtitulo{
+    color: var(--darksubtitle);
+    padding-left: 2px;
+}
+
+
+/* FLEX BOX DO PARÂMETRO E RESULTADO */
+section#conteiner{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;/* Dá a distância */
+    justify-content: space-between;
+}
+
+
+#simulacao, #resultados{
+    background-color: var(--darkcard);
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.250);
+
+    flex: 1 1 200px;
+}
+
+/* CONTAINER DE SIMULAÇÃO */
+article#simulacao>form{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 8px;
+}
+
+h2{
+    font-size: 1.3em;
+    margin-bottom: 20px;
+
+    /* CENTRALIZA A CALC E O H2 */
+    display: flex;
+    gap: 4px;
+}
+
+input[type=number]{
+    background-color: var(--darkcard);
+    color: var(--darktitle);
+    padding: 12px 20px;
+    border: 1px solid var(--darksubtitle);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+input[type=number]:focus{
+    border: 1px solid #902eca;
+    box-shadow: 0px 0px 10px #912eca60;
+}
+
+input[type=number].valido{
+    border: 1px solid #902eca;
+    box-shadow: 0px 0px 10px #912eca60;
+}
+
+/* TIRA AS SETINHAS DO NAVEGADOR */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+section#simulacao>form>label{
+    color: var(--darksubtitle);
+}
+
+/* INPUT DE PERIODO */
+#selecao-periodo{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 8px;
+}
+
+#prazo-label{
+    display: block;
+}
+
+#prazo{
+    flex: auto;
+}
+
+select{
+    background-color: var(--darkcard);
+    color: var(--darktitle);
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #902eca;
+    box-shadow: 0px 0px 10px #912eca60;
+    border-radius: 12px;
+
+}
+
+input[type=button]{
+    background-image: linear-gradient(to right, #902eca 10%, #6E17A6 100%);
+    flex: auto;
+    color: var(--darktitle);
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 0;
+}
+
+input[type=button]:hover{
+    background-image: linear-gradient(to right, #6e17a6 10%, #501177 100%);
+    cursor: pointer;
+}
+
+/* RESULTADOS */
+
+#investido, #juros, #final{
+    padding: 16px 16px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+div#investido{
+    background-image: linear-gradient(to right, #902eca 10%, #6E17A6 100%);
+}
+
+div#juros{
+    background-image: linear-gradient(to right, #22C55E, #158a40);
+}
+
+div#final{
+    background-image: linear-gradient(to right, #3367D1, #2412AB);
+}
+
+p.real{
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin-top: 8px;
+}
+
+/* DICAS */
+aside#dicasinvest{
+    background-color: var(--darkcard);
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.250);
+}
+
+#dicas{
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    gap: 20px;
+} 
+
+.dica{
+    text-align: center;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    flex-basis: 220px; 
+    gap: 10px;
+}
+
+
+#seta, #calendario, #alvo{
+    font-size: 2em;
+    border-radius: 50%;
+    padding: 5px;
+    padding-top: 15px;
+    height: 50px;
+    width: 50px;
+}
+
+#seta{
+    background-color: #DCFCE7;
+    color: #16A34A;
+}
+
+#calendario{
+    background-color: #E5DAF0;
+    color: #902eca;
+}
+
+#alvo{
+    background-color: #DBEAFE;
+    color: #2412AB;
+}
+
+.dica>p{
+    font-size: 0.8em;
+}
+
+@media screen and (max-width:768px) {
+    body{
+        display: block;
+        /* POIS ESTÁ COM GRID NA VERSÃO DE PC */
+    }
+
+    header{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: end;
+        background-color: var(--darkmain);
+        color: var(--darktitle);
+        padding: 0px 20px;
+        height: 60px;
+    }
+
+    
+    header img{
+        width: 200px;
+    }
+
+    header img.inativo{
+        display: none;
+    }
+
+    #botao-menu{
+        background-color: var(--darkmain);
+        border: 2px solid var(--darkcard);
+        border-radius: 4px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    #botao-menu:hover{
+        transform: scale(0.9);
+    }
+    
+    header .fi-sr-menu-burger{
+        color: var(--darktitle);
+        font-size: 1.5em;
+    }
+
+    main{
+        padding: 16px;
+        gap: 20px;
+    }
+}
+

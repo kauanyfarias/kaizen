@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações</title>
+    <!-- Importação estável via jsDelivr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css">
+    <link rel="stylesheet" href="./estilos/configuracoes.css">
+    <link rel="stylesheet" href="./estilos/menu.css">
+</head>
+<body>
+    <aside>
+        <nav id="barra-lateral">
+            <!-- LOGO DA KAIZEN -->  
+            <a href="./home.html"><img src="./imagens/logo.png" alt="Logo marca Kaizen"></a>
+            
+            <!-- Botões de interatividade -->
+            <div id="botoes-interatividade">
+                <span class="fi fi-sr-exchange"></span>
+                <span class="fi fi-sr-brightness"></span>
+            </div>
+
+            <ul><!-- NAVEGAÇÃO DE PÁGINAS -->
+                <a href="./home.html">
+                    <li><span class="fi fi-rr-house-chimney"></span>Início</li>
+                </a>
+                <a href="teste.html">
+                    <li><span class="fi fi-rs-arrow-trend-up"></span>Fluxo de Caixa</li>
+                </a>
+                <a href="teste.html">
+                    <li><span class="fi fi-rs-chart-pie-alt"></span>Gráficos</li>
+                </a>
+                <a href="./investimentos.html">
+                    <li><span class="fi fi-rs-pig"></span>Investimentos</li>
+                </a>
+                <a href="./calculadora.html">
+                    <li><span class="fi fi-rr-calculator"></span>Calculadora</li>
+                </a>
+                <a href="teste.html">
+                    <li><span class="fi fi-rs-users-alt"></span>Gestão de equipe</li>
+                </a>
+            </ul>
+            <ul> <!-- CONFIGURAÇÕES E SAÍDA -->
+                <a href="./configuracoes.html">
+                    <li><span class="fi fi-rr-settings"></span>Configurações</li>
+                </a>
+                <a href="teste.html">
+                    <li><span class="fi fi-rs-exit"></span>Sair</li>
+                </a>
+            </ul>
+        </nav>
+    </aside>
+
+    <header>
+        <button id="botao-menu"><i class="fi fi-sr-menu-burger"></i></button>
+        <a href="./home.html" ><img src="./imagens/logo.png" alt="Logo Kaizen" id="logo"></a>
+    </header>
+
+    <main>
+        <section>
+            <h1>Configurações</h1>
+            <p id="subtitulo">Gerencie suas preferências e configurações da conta</p>
+        </section>
+        <section id="informacoes">
+            <div id="titulo-botao">
+                <h2>Informações do Perfil</h2>
+                <input type="button" value="Salvar">
+            </div>
+                <label for="nome">Nome da empresa</label>
+                <input type="text" id="nome" placeholder="Empresa X">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="nome@empresa.com">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha">
+                <label for="alterar-senha">Alterar Senha</label>
+                <input type="password" id="alterar-senha">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao"></textarea>
+        </section>
+        <div id="overlay"></div>
+    </main>
+    <script src="./js/menu.js"></script>
+</body>
+</html>

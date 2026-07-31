@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="estilos/cadastro.css">
+</head>
+<body>
+    <main>
+        <form action="calculadora.html" method="post" autocomplete="on"></form>
+            <h1>Cadastro da Empresa</h1>
+
+            <!-- Informações da empresa -->
+            <p><label for="inome">Nome da empresa</label></p>
+            <input type="text" name="nome" id="inome" placeholder="Doces da Maria" required>
+
+            <!-- EMAIL -->
+            <p><label for="iemail">Email</label></p>
+            <input type="email" name="email" id="iemail" placeholder="seu_email@exemplo.com">
+
+            <!-- SENHA -->
+            <p><label for="isenha">Senha</label></p>
+            <input type="password" name="senha" id="isenha" maxlength="12" minlength="5" placeholder="Digite sua senha" required>
+
+            <p><label for="confirmsenha">Confirme a senha</label></p>
+            <input type="password" name="confirmsenha" id="iconfirmsenha" placeholder="Repita a senha">
+
+            <!-- ENVIAR -->
+            <a href="./home.html" id="enviar">Criar Conta</a>
+            <p>Já tem uma conta? <a href="./login.html">Faça Login</a></p>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaizen</title>
+    <!-- Importação estável via jsDelivr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./estilos/menu.css">
+    <link rel="stylesheet" href="./estilos/calculadora.css">
+</head>
+
+<body>
+    <!-- BARRA LATERAL -->
+    <aside>
+        <nav id="barra-lateral">
+            <!-- LOGO DA KAIZEN -->  
+            <a href="./home.html"><img src="./imagens/logo.png" alt="Logo marca Kaizen"></a>
+            
+            <!-- Botões de interatividade -->
+            <div id="botoes-interatividade">
+                <span class="fi fi-sr-exchange"></span>
+                <span class="fi fi-sr-brightness"></span>
+            </div>
+
+            <ul><!-- NAVEGAÇÃO DE PÁGINAS -->
+                <a href="./home.html">
+                    <li><span class="fi fi-rr-house-chimney"></span>Início</li>
+                </a>
+                <a href="teste.html">
+                    <li><span class="fi fi-rs-arrow-trend-up"></span>Fluxo de Caixa</li>
+                </a>
+                <a href="teste.html">
+                    <li><span class="fi fi-rs-chart-pie-alt"></span>Gráficos</li>
+                </a>
+                <a href="./investimentos.html">
+                    <li><span class="fi fi-rs-pig"></span>Investimentos</li>
+                </a>
+                <a href="./calculadora.html">
+                    <li><span class="fi fi-rr-calculator"></span>Calculadora</li>
+                </a>
+                <a href="teste.html">
+                    <li><span class="fi fi-rs-users-alt"></span>Gestão de equipe</li>
+                </a>
+            </ul>
+            <ul> <!-- CONFIGURAÇÕES E SAÍDA -->
+                <a href="./configuracoes.html">
+                    <li><span class="fi fi-rr-settings"></span>Configurações</li>
+                </a>
+                <a href="teste.html">
+                    <li><span class="fi fi-rs-exit"></span>Sair</li>
+                </a>
+            </ul>
+        </nav>
+    </aside>
+
+    <header>
+        <button id="botao-menu"><i class="fi fi-sr-menu-burger"></i></button>
+        <a href="./home.html" ><img src="./imagens/logo.png" alt="Logo Kaizen" id="logo"></a>
+    </header>
+    
+    <main>
+        <section>
+            <h1>Calculadora Financeira</h1>
+            <p id="subtitulo">Simule seus investimentos e planeje seu futuro</p>
+        </section>
+
+        <section id="conteiner">
+            <article id="simulacao">
+                <h2><span class="fi fi-rr-calculator"></span>Parâmetros de Simulação</h2>
+                <form method="post">
+                    <label for="valor-inicial">Valor inicial</label>
+                    <input type="number" id="valor-inicial" placeholder="R$" required>
+
+                    <label for="aporte">Aporte Mensal</label>
+                    <input type="number" id="aporte" placeholder="R$" required>
+
+                    <label for="taxa">Taxa de Juros</label>
+                    <input type="number" id="taxa" placeholder="%" required>
+                    
+                    <label for="prazo" id="prazo-label">Prazo</label>
+                    <div id="selecao-periodo">    
+                        <input type="number" id="prazo" value="12" required>
+                        <select id="periodo">
+                            <option value="meses">meses</option>
+                            <option value="anos">anos</option>
+                        </select>
+                    </div>
+
+                    <input type="button" value="Calcular" onclick="calcular()">
+                </form>
+            </article>
+
+            <article id="resultados">
+                <h2>Resultados da Simulação</h2>
+                <div id="investido">
+                    <p>Valor Investido</p>
+                    <p class="real" id="valor-investido">R$ ---</p>
+                </div>
+                <div id="juros">
+                    <p>Juros Ganhos</p>
+                    <p class="real" id="juros-ganhos">R$ ---</p>
+                </div>
+                <div id="final">
+                    <p>Valor Final</p>
+                    <p class="real" id="valor-final">R$ ---</p>
+                </div>
+                <h3>Métricas de Performace</h3>
+                <p id="retorno-total">Retorno Total: --</p>
+                <p id="tempo-duplicacao">Tempo de duplicação: --</p>
+                <p id="juros-sobre-investimento">Juros sobre investimento: --</p>
+            </article>
+        </section>
+        <aside id="dicasinvest">
+            <h2>Dicas de Investimentos</h2>
+            <section id="dicas">
+                <article class="dica">
+                    <span class="fi fi-rs-arrow-trend-up" id="seta"></span>
+                    <h4>Comece Cedo</h4>
+                    <p>Quanto antes você começar a investir, mais os juros compostos trabalharão ao seu favor.</p>
+                </article>
+                <article class="dica">
+                    <span class="fi fi-br-calendar" id="calendario"></span>
+                    <h4>Seja Consistente</h4>
+                    <p>Aportes regulares, mesmo que pequenos, podem gerar grandes resultados ao longo do tempo.</p>
+                </article>
+                <article class="dica">
+                    <span class="fi fi-rr-bullseye" id="alvo"></span>
+                    <h4>Defina Metas</h4>
+                    <p>Ter objetivos claros ajuda a manter o foco e a disciplina necessária para investir
+                    regularmente.</p>
+                </article>
+            </section>
+        </aside>
+        <div id="overlay"></div>
+    </main>
+
+    <script src="./js/menu.js"></script>
+    <script src="./js/calculadora.js"></script>
+</body>
+
+</html>

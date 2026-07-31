@@ -1,0 +1,127 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+
+*{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* HEADER */
+header{
+    background-color: black;
+    color: white;
+    padding: 12px 36px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img{
+    width: 58px;
+}
+
+header li{
+    display: inline-block;
+    margin: 0 20px;
+}
+
+a{
+    height: 24px;
+    padding: 4px 22px;
+    color: white;
+    text-decoration: none;
+    border-radius: 24px;
+    
+}
+
+#cadastro{
+    background-image: linear-gradient(to right, #902eca 10%, #6E17A6);
+    font-weight: bold;
+}
+
+header a#criarconta{
+    background-color: #2C2C2C;
+}
+
+/* MAIN */
+#herosection{
+    height: 90vh;
+    background-color: #6E17A6;
+}
+
+#apresentacao{
+    
+}
+
+
+
+
+
+/* PLATAFORMA */
+article{
+    height: 650px;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+article.variacao{
+    background-color: #F5EBFF;
+}
+
+div.informacoes{
+    flex: 0 1 600px; /* Não pode crescer, apenas diminuir e o tamanho inicial é de 600px */
+
+    display: flex;
+    flex-flow:column nowrap;
+    gap: 24px;
+}
+
+
+article h3{
+    font-size: 1.4em;
+    color: #6E17A6;
+}
+
+article p{
+    font-size: 1.4em;
+}
+
+article ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+article li{
+    font-size:1.3em;
+    padding: 12px 0;
+}
+
+article li::before{
+    content: "\f058"; /* Unicode do circle-check */
+    font-family: "Font Awesome 5 Free";
+    color: #902eca;
+    padding-right: 16px;
+}
+
+
+@media screen and (max-width:768px) {
+    header{
+        padding: 12px 10px;
+    }
+
+    header ul{
+        display: none;
+    }
+
+    article{
+        height: 1000px;
+        padding: 0 16px;
+    }
+}
